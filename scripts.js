@@ -20,6 +20,28 @@ var levels = {
 		"place":["col1row3", "col2row3", "col3row3"],
 		"message":"Place Monkey below the rainbow"
 		}
+	],
+"hard":[
+		{
+		"name":"above",
+		"place":["col2row1", "col3row1"],
+		"message":"Place Monkey above the rainbow"
+		},
+		{
+		"name":"Left Side", 
+		"place":["col1row2"],
+		"message":"Place Monkey to the <strong>left</strong> rainbow"
+		},
+		{
+		"name":"Right Side", 
+		"place":["col1row2"],
+		"message":"Place Monkey to the <strong>left</strong> rainbow"
+		},
+		{
+		"name":"below",
+		"place":["col1row3", "col2row3", "col3row3"],
+		"message":"Place Monkey below the rainbow"
+		}
 	]
 };
 $(document).ready(function(){
@@ -120,7 +142,7 @@ function getRandomLevel(difficulty){
 	var selectedLevel = levels[difficulty];
 	var randomLavel = selectedLevel[Math.floor(Math.random()*selectedLevel.length)];
 	if (randomLavel == previousLevel) {
-	getRandomLevel();
+		getRandomLevel();
 	}
 	return randomLavel;	
 }
@@ -133,10 +155,10 @@ function displayMessage(message){
 // level is complete.
 var revert = function(){
 	$("#col1row1").draggable({revert: "valid"});
-	var r = $.Deferred();
-	setTimeout(function (){
-    // and call `resolve` on the deferred object, once you're done
-	r.resolve();
+		var r = $.Deferred();
+		setTimeout(function (){
+	    // and call `resolve` on the deferred object, once you're done
+		r.resolve();
 	}, 500);
 	// return the deferred object
 	return r;		
