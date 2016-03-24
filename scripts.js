@@ -1,6 +1,4 @@
-/* First script to use jquery to make a div draggable
-   and another droppable
-  */
+
 var score = 0;
 var previousLevel;
 var levels = { 
@@ -46,24 +44,9 @@ var levels = {
 };
 $(document).ready(function(){
     "use strict";
-	// set the monkey dive
+	// set the monkey div
     $("#col1row1").draggable({revert: "invalid"});
-	/*
-	//let the user select difficulty  
-	$(function() {
-		$( "#dialog-modal" ).dialog({
-		autoOpen: false,
-		modal: true,
-		buttons: {
-		Ok: function() {
-			var difficulty = $('#level_select option:selected').val();
-			setupLevel(difficulty);
-			$(this).dialog( "close" );
-			$(message).dialog("open");
-		}
-		}
-	});
-	*/
+
 	//dialog for message to the player
 	$("#message").dialog({
 		autoOpen: false,
@@ -76,7 +59,6 @@ $(document).ready(function(){
 			duration: 1000
 		}
 	});
-    //setupLevel(); 
 	//setup modal form that will handel 
 	//level changes
 	$( "#dialog-form" ).dialog({
@@ -167,7 +149,5 @@ var revert = function(){
 //to beginning postion	
 var reset = function(){
 	$("#col1row1").draggable({revert: "invalid"});
-	//makeDroppable();
-	//setupLevel();
 };
 
