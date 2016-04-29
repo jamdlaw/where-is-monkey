@@ -36,7 +36,11 @@ img.display
 div.hidden{
 	visibility:hidden;
 }
-	
+#monkey{
+	visibility:visible;
+	width:100px;
+	height:100px;
+}	
 img {
 	max-width:100%;
 }

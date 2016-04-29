@@ -45,7 +45,8 @@ var levels = {
 $(document).ready(function(){
     "use strict";
 	// set the monkey div
-    $("#col1row1").draggable({revert: "invalid"});
+    //$("#col1row1").draggable({revert: "invalid"});
+    $("#monkey").draggable({revert: "invalid"});
 
 	//dialog for message to the player
 	$("#message").dialog({
@@ -136,7 +137,7 @@ function displayMessage(message){
 //call this function to return monkey after 
 // level is complete.
 var revert = function(){
-	$("#col1row1").draggable({revert: "valid"});
+	$("#monkey").draggable({revert: "valid"});
 		var r = $.Deferred();
 		setTimeout(function (){
 	    // and call `resolve` on the deferred object, once you're done
@@ -148,6 +149,6 @@ var revert = function(){
 // call this function when monkey is returned 
 //to beginning postion	
 var reset = function(){
-	$("#col1row1").draggable({revert: "invalid"});
+	$("#monkey").draggable({revert: "invalid"});
 };
 
