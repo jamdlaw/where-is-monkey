@@ -47,7 +47,6 @@ $(document).ready(function(){
 	// set the monkey div
     //$("#col1row1").draggable({revert: "invalid"});
     $("#monkey").draggable({revert: "invalid"});
-
 	//dialog for message to the player
 	$("#message").dialog({
 		autoOpen: false,
@@ -93,6 +92,8 @@ function makeDroppable(droppables){
 				$("#dialog-form label").empty();
 				$("#dialog-form label").append("you did it! " + score);
 				$("#dialog-form").dialog( "open" );
+				var audio = new Audio('media/ta-da-sound.mp3');
+				audio.play();
 				revert().done(reset);			
 				}		
 			});
@@ -117,7 +118,7 @@ function setupLevel(difficulty, mode = 'new'){
 	makeDroppable(level.place);	
 	}
 function clearDroppable(droppables){
-	$.each( droppables, function(i ,droppable) {
+	$.each(droppables, function(i ,droppable) {
 			$('#' + droppable).droppable('destroy');
 		});
 }
