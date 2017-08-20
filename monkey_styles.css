@@ -40,6 +40,7 @@ div.hidden{
 	visibility:visible;
 	width:100px;
 	height:100px;
+	cursor:pointer;
 }	
 img {
 	max-width:100%;
